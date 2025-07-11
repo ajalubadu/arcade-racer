@@ -7,8 +7,7 @@ extends RigidBody2D
 @export var grip := 10.0
 @export var downforce := 20.0
 
-@export var speed_label_path : NodePath  # Zeigt auf das Label
-@onready var speed_label := get_node(speed_label_path)
+@onready var speed_label: Label = $"../CanvasLayer/SpeedLabel"
 
 
 var input_accel := 0.0
@@ -34,11 +33,13 @@ func _physics_process(delta):
 	var steer_strength = input_steer * steering_speed * speed_factor * 1000.0  
 	apply_torque(steer_strength * sign(velocity_forward))
 
-	# Drift unterdrücken
+	# AntiDrift
 	var sideways_velocity = right_dir * linear_velocity.dot(right_dir)
 	linear_velocity -= sideways_velocity * grip * delta
 
 	# Downforce
 	var downforce_force = forward_dir * -1 * linear_velocity.length() * downforce * delta
 	apply_central_force(downforce_force)
+	
+	speed_label.text = " Speed: " +str(velocity_forward)+ " km/h"
 	
