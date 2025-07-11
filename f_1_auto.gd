@@ -41,5 +41,5 @@ func _physics_process(delta):
 	var downforce_force = forward_dir * -1 * linear_velocity.length() * downforce * delta
 	apply_central_force(downforce_force)
 	
-	speed_label.text = " Speed: " +str(velocity_forward)+ " km/h"
+	speed_label.text = "Speed: %0.1f km/h" %velocity_forward
 	
