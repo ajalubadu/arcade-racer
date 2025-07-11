@@ -16,8 +16,8 @@ var input_steer := 0.0
 
 
 func _physics_process(delta):
-	input_accel = Input.get_action_strength("ui_up") - Input.get_action_strength("ui_down")
-	input_steer = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	input_accel = Input.get_action_strength("up") - Input.get_action_strength("down")
+	input_steer = Input.get_action_strength("right") - Input.get_action_strength("left")
 
 	var forward_dir = -transform.y    
 	var right_dir = transform.x       
