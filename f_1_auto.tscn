@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://2bbvmxy8emnp"]
+
+[ext_resource type="Texture2D" uid="uid://2glcngwws1t1" path="res://F1 auto.png" id="1_i1k8i"]
+[ext_resource type="Script" uid="uid://btddhiurc30qj" path="res://f_1_auto.gd" id="1_xswcb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xswcb"]
+size = Vector2(110, 174)
+
+[node name="F1 Auto" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_xswcb")
+steering_speed = 2.5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.108521, 0.113851)
+texture = ExtResource("1_i1k8i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xswcb")

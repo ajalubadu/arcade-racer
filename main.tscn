@@ -1,9 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://bb1mf0iodsayj"]
+[gd_scene load_steps=3 format=3 uid="uid://bb1mf0iodsayj"]
 
-[ext_resource type="PackedScene" uid="uid://b0p7f1olqcx6v" path="res://player_2.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://2bbvmxy8emnp" path="res://f_1_auto.tscn" id="1_ig7tw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ig7tw"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Player 2" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(546, 339)
-schneller = 500
+[node name="F1 Auto" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(577, 322)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SpeedLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.888
+anchor_top = 0.903
+anchor_right = 0.984
+anchor_bottom = 0.938
+offset_left = 0.0239258
+offset_top = -0.144043
+offset_right = -0.567993
+offset_bottom = 0.175964
+text = "Speed: 0 km/h"
+label_settings = SubResource("LabelSettings_ig7tw")
+horizontal_alignment = 2
